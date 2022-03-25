@@ -1,0 +1,78 @@
+@import "variaveis.css";
+@import "basico.css";
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(8, var(--lado));
+    width: fit-content;
+    border: 8px solid var(--casas-10);
+    margin: auto;
+}
+
+.casa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--lado);
+    height: var(--lado);
+}
+
+.escura {
+    background-color: var(--escura);
+}
+
+.possivel::after {
+    content: '';
+    width: calc(var(--lado) * .2);
+    height: calc(var(--lado) * .2);
+    border-radius: 50%;
+    background-color: var(--borda);
+}
+
+.clara {
+    background-color: var(--clara);
+}
+
+.peca {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--lado) * .85);
+    height: calc(var(--lado) * .85);
+    cursor: pointer;
+}
+
+.preta {
+    color: var(--preta);
+}
+
+.branca {
+    color: var(--branca);
+}
+
+.icone {
+    width: calc(var(--lado) * .62);
+    height: calc(var(--lado) * .62);
+}
+
+.clicada {
+    outline: 3px solid var(--borda);
+}
+
+.movendo {
+    opacity: .33;
+}
+
+.ameacada {
+    outline: 4px solid crimson;
+}
+
+.board {
+    color: var(--borda);
+}
